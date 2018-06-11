@@ -37,7 +37,35 @@ To update the code, run git update inside of the local clone:
 
 ## Usage
 
+   ./fragmentLongReads  -f <string> [-l <unsigned int>] [--] [--version]
+                        [-h]
 
+Where: 
+
+   -f <string>,  --FASTQ <string>
+     (required)  The UNPACKED fastq file
+
+   -l <unsigned int>,  --length <unsigned int>
+     length of the in silico fragments
+
+   --,  --ignore_rest
+     Ignores the rest of the labeled arguments following this flag.
+
+   --version
+     Displays version information and exits.
+
+   -h,  --help
+     Displays usage information and exits.
+
+
+   FragmentLongReads:
+
+   Provide a fastq file containing long reads. The reads will be in silico
+   random fragmented to the size chosen by parameter (-l/--length). All
+   fragments originating from the same long read will be tagged as
+   paired/linked in the fastq header. Random fragmentation starts at a
+   random nucleotide at the 5' end of the read. The random start nucleotide
+   can be any between 0 and (-l/--length). 
 
 
 ## Output
